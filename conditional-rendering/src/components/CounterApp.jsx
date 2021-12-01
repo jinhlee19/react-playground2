@@ -3,8 +3,11 @@ import React, { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
 
-  function increase() {
-    setCount(count + 1);
+  // function increase() {
+  //   setCount(count + 1);
+  // }
+  const onIncrease = () => {
+    setNumber(number + 1);
   }
   function decrease() {
     setCount(count - 1);
