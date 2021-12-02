@@ -1,33 +1,55 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 function App() {
-  const [headingText, setHeadingText] = useState("Hello!");
-  const [isMousedOver, setMouseOver] = useState(false);
-  function handleClick() {
-    setHeadingText("Submitted");
-  }
+	const [isMousedOver, setMouseOver] = useState(false);
+	// Event #
+	// function handleClick() {
+	// 	setHeadingText("Submitted");
+	// }
 
-  function handleMouseOver() {
-    setMouseOver(true);
-  }
-  function handleMouseOut() {
-    setMouseOver(false);
-  }
+	function handleMouseOver() {
+		setMouseOver(true);
+	}
+	function handleMouseOut() {
+		setMouseOver(false);
+	}
+	// Form # 2
+	const [name, setName] = useState("");
+	const [headingText, setHeading] = useState("");
 
-  return (
-    <div className="container">
-      <h1>{headingText}</h1>
-      <input type="text" placeholder="What's your name?" />
-      <button
-        style={{ backgroundColor: isMousedOver ? "black" : "white" }}
-        onClick={handleClick}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-      >
-        Submit
-      </button>
-    </div>
-  );
+	function handleChange(event) {
+		console.log(event.target.value);
+		setName(event.target.value);
+	}
+
+	function handleClick(event) {
+		setHeading(name);
+		console.log(event);
+		// setHeadingText("Submitted");
+		event.preventDefault();
+	}
+
+	return (
+		<div className="container">
+			<form onSubmit={handleClick}>
+				<h1>Hi, Hello! {headingText}</h1>
+				<input
+					onChange={handleChange} //form #1
+					type="text"
+					placeholder="What's your name?"
+					value={name} //form #3
+				/>
+				<button
+					style={{ backgroundColor: isMousedOver ? "black" : "white" }}
+					
+					onMouseOver={handleMouseOver}
+					onMouseOut={handleMouseOut}
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+	);
 }
 
 export default App;
