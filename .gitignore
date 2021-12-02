@@ -5,6 +5,14 @@
 /.pnp
 .pnp.js
 
+/node_modules
+/.pnp
+.pnp.js
+
+
+**/node_modlues/
+
+
 # testing
 /coverage
 
@@ -13,6 +21,7 @@
 
 # misc
 .DS_Store
+**/.DS_Store
 .env.local
 .env.development.local
 .env.test.local

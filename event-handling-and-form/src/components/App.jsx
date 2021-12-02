@@ -41,7 +41,6 @@ function App() {
 				/>
 				<button
 					style={{ backgroundColor: isMousedOver ? "black" : "white" }}
-					
 					onMouseOver={handleMouseOver}
 					onMouseOut={handleMouseOut}
 				>
