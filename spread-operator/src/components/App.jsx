@@ -10,7 +10,8 @@ function App() {
   function handleChange(event) {
     const { name, value } = event.target;
 
-    setContact(prevValue => {
+    // setContact(prevValue => ({...prevValue,[name]: value})); // ()로 object 표시
+    setContact(prevValue => { //preferred version -> 가독성
       return{
         ...prevValue,
         [name]: value
